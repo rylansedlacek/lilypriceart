@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lily Price</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="bio.html">Bio & Statement</a>
+            </div>
+
+            <div class="nav-center">
+                <a href="index.html" class="site-title">
+                    Lily Price
+                </a>
+            </div>
+
+            <div class="nav-right">
+                <a href="painting.html">Paintings</a>
+                <a href="drawing.html">Drawings</a>
+                <a href="sculpture.html">Sculpture</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="carousel-section">
+            <div class="carousel-container">
+
+                <button class="carousel-btn prev">
+                    &#10094;
+                </button>
+
+                <div class="carousel-image-wrapper">
+                    <!--default load-->
+                    <img
+                        id="carousel-image"
+                        src="images/Drawing/Clair.jpg"
+                        alt="Artwork slideshow image"
+                    >
+                    <div class="carousel-description">
+                        <p id="carousel-caption">
+                            Claire, 11″x9″, Colored pencil on paper, 2024
+                        </p>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next">
+                    &#10095;
+                </button>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Lily Price</p>
+    </footer>
+
+    <script>
+        // hard code for now, dynamic pretty ez
+        const artworks = [
+            {
+                image: "images/Drawing/Clair.jpg",
+                caption: "Claire, 11″x9″, Colored pencil on paper, 2024"
+            },
+
+            {
+                image: "images/Drawing/Til_ I Die.jpg",
+                caption: "'Til I die, 24″x18″, Charcoal on paper, 2024"
+            },
+
+            {
+                image: "images/Painting/abstract/telemachuswholeimage.jpg",
+                caption: "The Farewell of Telemachus and Eucharis after Jacques-Louis David, Oil on Canvas, 30″x24″, 2025"
+            },
+
+            {
+                image: "images/Painting/Independentpainting/Sunday.jpg",
+                caption: "Sunday, Oil on Canvas, 54″x30″, 2025"
+            },
+
+            {
+                image: "images/Painting/Painting 1/DinosaurDestroyer.jpg",
+                caption: "Dinosaur Destroyer, 24″x18″, Oil on Canvas, 2024"
+            },
+
+            {
+                image: "images/Painting/Painting 2/LeaveMeLikeYouFoundMe.jpg",
+                caption: "Leave Me Like You Found Me, Oil on Canvas, 48″x48″, 2025"
+            },
+
+            {
+                image: "images/Sculpture/Big baby/BIGBABY.jpg",
+                caption: "BIGBABY, 2.5’x2′, Cardboard, Sand, Coffee ground, Baby powder, Glue, Paint, 2025"
+            },
+
+            {
+                image: "images/Sculpture/Pantyhose/Lily_Price_Project 3_Level up full image.jpg",
+                caption: "You Gotta Have Fear, 3’x3′, Wire and Pantyhose, 2025"
+            },
+
+            {
+                image: "images/Sculpture/yarnman.jpg",
+                caption: "Yarnman, 5’x5′, Yarn, wire, newspaper, 2023"
+            },
+
+            {
+                image: "images/Drawing/Still life 1.jpg",
+                caption: "Still life #1, 24″x18″, Graphite on paper, 2024"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        const carouselImage =
+            document.getElementById("carousel-image");
+
+        const carouselCaption =
+            document.getElementById("carousel-caption");
+
+        function updateCarousel() {
+            carouselImage.src =
+                artworks[currentIndex].image;
+
+            carouselCaption.textContent =
+                artworks[currentIndex].caption;
+        }
+
+        document.querySelector(".next")
+            .addEventListener("click", () => {
+
+                currentIndex++;
+
+                if (currentIndex >= artworks.length) {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            });
+
+        document.querySelector(".prev")
+            .addEventListener("click", () => {
+
+                currentIndex--;
+
+                if (currentIndex < 0) {
+                    currentIndex = artworks.length - 1;
+                }
+                updateCarousel();
+            });
+    </script>
+
+</body>
+</html>
