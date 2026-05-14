@@ -208,8 +208,48 @@ main {
 
 
 /* =========================
- BIO & STATEMENT
+   BIO 
 ========================= */
+
+.bio-hero {
+    display: flex;
+    justify-content: center;
+
+    padding: 3rem 0;
+}
+
+.bio-hero img {
+    width: 250px;
+    height: auto;
+
+    border: 2px solid black;
+}
+
+.bio-section,
+.statement-section {
+    max-width: 800px;
+    margin: 0 auto;
+
+    padding: 2rem 3rem;
+}
+
+.bio-section h2,
+.statement-section h2 {
+    font-family: "Instrument Serif", serif;
+
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.bio-section p,
+.statement-section p {
+    font-family: "Instrument Serif", serif;
+
+    font-size: 1.1rem;
+    line-height: 1.7;
+
+    color: #111;
+}
 
 
 /* =========================
