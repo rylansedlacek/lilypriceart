@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <header class="site-header">
         <nav class="navbar">
             <div class="nav-left">
@@ -36,19 +37,14 @@
 
     <main>
         <section class="carousel-section">
-            <div class="carousel-container">
+            <div class="carousel-track">
 
-                <button class="carousel-btn prev">
-                    &#10094;
-                </button>
+                <div class="side-image left-image">
+                    <img id="left-image" src="">
+                </div>
 
-                <div class="carousel-image-wrapper">
-                    <!--default load-->
-                    <img
-                        id="carousel-image"
-                        src="images/Drawing/Clair.jpg"
-                        alt="Artwork slideshow image"
-                    >
+                <div class="center-image">
+                    <img id="center-image" src="images/Drawing/Clair.jpg" alt="Artwork slideshow image">
                     <div class="carousel-description">
                         <p id="carousel-caption">
                             Claire, 11″x9″, Colored pencil on paper, 2024
@@ -56,10 +52,9 @@
                     </div>
                 </div>
 
-                <button class="carousel-btn next">
-                    &#10095;
-                </button>
-
+                <div class="side-image right-image">
+                    <img id="right-image" src="">
+                </div>
             </div>
         </section>
     </main>
@@ -69,7 +64,7 @@
     </footer>
 
     <script>
-        // hard code for now, dynamic pretty ez
+
         const artworks = [
             {
                 image: "images/Drawing/Clair.jpg",
@@ -124,41 +119,57 @@
 
         let currentIndex = 0;
 
-        const carouselImage =
-            document.getElementById("carousel-image");
+        const centerImage =
+            document.getElementById("center-image");
 
-        const carouselCaption =
+        const leftImage =
+            document.getElementById("left-image");
+
+        const rightImage =
+            document.getElementById("right-image");
+
+        const caption =
             document.getElementById("carousel-caption");
 
         function updateCarousel() {
-            carouselImage.src =
+
+            const prevIndex =
+                (currentIndex - 1 + artworks.length)
+                % artworks.length;
+
+            const nextIndex =
+                (currentIndex + 1)
+                % artworks.length;
+
+            centerImage.src =
                 artworks[currentIndex].image;
 
-            carouselCaption.textContent =
+            leftImage.src =
+                artworks[prevIndex].image;
+
+            rightImage.src =
+                artworks[nextIndex].image;
+
+            caption.textContent =
                 artworks[currentIndex].caption;
         }
 
-        document.querySelector(".next")
-            .addEventListener("click", () => {
+        leftImage.addEventListener("click", () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = artworks.length - 1;
+            }
+            updateCarousel();
+        });
 
-                currentIndex++;
-
-                if (currentIndex >= artworks.length) {
-                    currentIndex = 0;
-                }
-                updateCarousel();
-            });
-
-        document.querySelector(".prev")
-            .addEventListener("click", () => {
-
-                currentIndex--;
-
-                if (currentIndex < 0) {
-                    currentIndex = artworks.length - 1;
-                }
-                updateCarousel();
-            });
+        rightImage.addEventListener("click", () => {
+            currentIndex++;
+            if (currentIndex >= artworks.length) {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+        updateCarousel();
     </script>
 
 </body>

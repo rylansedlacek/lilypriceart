@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Paintings | Lily Price</title>
+    <title>Painting | Lily Price</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
     <header class="site-header">
-
         <nav class="navbar">
 
             <div class="nav-left">
@@ -35,17 +33,208 @@
                 <a href="drawing.html">Drawings</a>
                 <a href="sculpture.html">Sculpture</a>
             </div>
-
         </nav>
-
     </header>
 
     <main>
+        <!--TODO Dynamic-->
+        <section class="grid">
+            <div class="grid-item" onclick="openModal(0)">
+                <img src="images/Painting/Painting 1/DinosaurDestroyer.jpg">
+            </div>
 
+            <div class="grid-item" onclick="openModal(1)">
+                <img src="images/Painting/abstract/telemachuswholeimage.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(2)">
+                <img src="images/Painting/abstract/FinalProject_SaveyourselfPt.2.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(3)">
+                <img src="images/Painting/abstract/SaveyourselfPt.1.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(4)">
+                <img src="images/Painting/Thesis paintings/Eclipse.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(5)">
+                <img src="images/Painting/abstract/Whogoesthere!.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(6)">
+                <img src="images/Painting/Painting 2/LeaveMeLikeYouFoundMe.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(7)">
+                <img src="images/Painting/Painting 1/Unearthlyglow.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(8)">
+                <img src="images/Painting/Painting 1/First b+w still life.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(9)">
+                <img src="images/Painting/Thesis paintings/Always Returning.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(10)">
+                <img src="images/Painting/Thesis paintings/The Thick and The Thin.jpg">
+            </div>
+
+            <div class="grid-item" onclick="openModal(11)">
+                <img src="images/Painting/Painting 1/Smallwoodenlandscape.jpg">
+            </div>
+        </section>
     </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+
+            <div class="modal-main">
+                <img id="modal-main-image">
+                <div class="thumbs" id="thumbs"></div>
+            </div>
+
+            <div class="modal-info">
+                <h2 id="modal-title">Title Not Found</h2>
+                <p id="modal-description">
+                    Description not found.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <footer class="site-footer">
-    <p>© 2026 Lily Price</p>
+        <p>© 2026 Lily Price</p>
     </footer>
+
+    <script>
+        // TODO Dynamic
+        const artworks = [
+            {
+                title: "Dinosaur Destroyer",
+                desc: "24″x18″, Oil on Canvas, 2024",
+                main: "images/Painting/Painting 1/DinosaurDestroyer.jpg",
+                subs: []
+            },
+            {
+                title: "The Farewell of Telemachus and Eucharis after Jacques-Louis David",
+                desc: "Oil on Canvas, 30″x24″, 2025",
+                main: "images/Painting/abstract/telemachuswholeimage.jpg",
+                subs: []
+            },
+            {
+                title: "Save Yourself Part 2",
+                desc: "Oil on Canvas, 48″x36″, 2025",
+                main: "images/Painting/abstract/FinalProject_SaveyourselfPt.2.jpg",
+                subs: []
+            },
+            {
+                title: "Save yourself Part 1",
+                desc: "Oil on Canvas, 11″x9″, 2025",
+                main: "images/Painting/abstract/SaveyourselfPt.1.jpg",
+                subs: []
+            },
+            {
+                title: "Eclipse",
+                desc: "Placeholder Description",
+                main: "images/Painting/Thesis paintings/Eclipse.jpg",
+                subs: []
+            },
+            {
+                title: "Who goes there!",
+                desc: "Placeholder Description",
+                main: "images/Painting/abstract/Whogoesthere!.jpg",
+                subs: []
+            },
+            {
+                title: "Leave Me Like You Found Me",
+                desc: "Oil on Canvas, 48″x48″, 2025",
+                main: "images/Painting/Painting 2/LeaveMeLikeYouFoundMe.jpg",
+                subs: [
+                    "images/Painting/Painting 2/LeaveMeLikeYouFoundMe.jpg",
+                    "images/Painting/Painting 2/Leavemecloseup.jpg"
+                ]
+            },
+            {
+                title: "Unearthly Glow",
+                desc: "Placeholder Description",
+                main: "images/Painting/Painting 1/Unearthlyglow.jpg",
+                subs: []
+            },
+            {
+                title: "Placeholder Title",
+                desc: "Placeholder Description",
+                main: "images/Painting/Painting 1/First b+w still life.jpg",
+                subs: []
+            },
+            {
+                title: "Always Returning",
+                desc: "Placeholder Description",
+                main: "images/Painting/Thesis paintings/Always Returning.jpg",
+                subs: [
+                    "images/Painting/Thesis paintings/Always Returning.jpg",
+                    "images/Painting/Thesis paintings/Always Returning close up.jpg",
+                ]
+            },
+            {
+                title: "The Thick and The Thin",
+                desc: "Placeholder Description",
+                main: "images/Painting/Thesis paintings/The Thick and The Thin.jpg",
+                subs: [
+                    "images/Painting/Thesis paintings/The Thick and The Thin.jpg",
+                    "images/Painting/Thesis paintings/the thick and the thin face close up.jpg",
+                    "images/Painting/Thesis paintings/the thick and the thing background close up.jpg"
+                ]
+            },
+            {
+                title: "Placeholder Title",
+                desc: "Placeholder Description",
+                main: "images/Painting/Painting 1/Smallwoodenlandscape.jpg",
+                subs: []
+            }
+        ];
+
+        let currentIndex = 0;
+
+        const modal = document.getElementById("modal");
+        const mainImage = document.getElementById("modal-main-image");
+        const title = document.getElementById("modal-title");
+        const desc = document.getElementById("modal-description");
+        const thumbs = document.getElementById("thumbs");
+
+        function openModal(index) {
+            currentIndex = index;
+            modal.style.display = "flex";
+            loadArtwork();
+        }
+
+        function loadArtwork() {
+            const art = artworks[currentIndex];
+            mainImage.src = art.main;
+            title.textContent = art.title;
+            desc.textContent = art.desc;
+
+            thumbs.innerHTML = "";
+
+            art.subs.forEach((img, i) => {
+                const t = document.createElement("img");
+                t.src = img;
+                t.onclick = () => {
+                    mainImage.src = img;
+                };
+                thumbs.appendChild(t);
+            });
+        }
+
+        window.onclick = function (e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 
 </body>
 </html>
