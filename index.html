@@ -8,6 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -17,26 +18,30 @@
 
     <header class="site-header">
         <nav class="navbar">
+
             <div class="nav-left">
-                <a href="bio.html">Bio & Statement</a>
+                <a href="bio.hmtl">Bio & Statement</a>
             </div>
 
             <div class="nav-center">
-                <a href="index.html" class="site-title">
+                <a href="/" class="site-title">
                     Lily Price
                 </a>
             </div>
 
             <div class="nav-right">
-                <a href="painting.html">Paintings</a>
-                <a href="drawing.html">Drawings</a>
+                <a href="painting.html">Painting</a>
+                <a href="drawing.html">Drawing</a>
                 <a href="sculpture.html">Sculpture</a>
             </div>
+
         </nav>
     </header>
 
     <main>
+
         <section class="carousel-section">
+
             <div class="carousel-track">
 
                 <div class="side-image left-image">
@@ -44,19 +49,27 @@
                 </div>
 
                 <div class="center-image">
-                    <img id="center-image" src="images/Drawing/Clair.jpg" alt="Artwork slideshow image">
+
+                    <img
+                        id="center-image"
+                        src=""
+                        alt="Artwork slideshow image"
+                    >
+
                     <div class="carousel-description">
-                        <p id="carousel-caption">
-                            Claire, 11″x9″, Colored pencil on paper, 2024
-                        </p>
+                        <p id="carousel-caption"></p>
                     </div>
+
                 </div>
 
                 <div class="side-image right-image">
                     <img id="right-image" src="">
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
     <footer class="site-footer">
@@ -65,57 +78,7 @@
 
     <script>
 
-        const artworks = [
-            {
-                image: "images/Drawing/Clair.jpg",
-                caption: "Claire, 11″x9″, Colored pencil on paper, 2024"
-            },
-
-            {
-                image: "images/Drawing/Til_ I Die.jpg",
-                caption: "'Til I die, 24″x18″, Charcoal on paper, 2024"
-            },
-
-            {
-                image: "images/Painting/abstract/telemachuswholeimage.jpg",
-                caption: "The Farewell of Telemachus and Eucharis after Jacques-Louis David, Oil on Canvas, 30″x24″, 2025"
-            },
-
-            {
-                image: "images/Painting/Independentpainting/Sunday.jpg",
-                caption: "Sunday, Oil on Canvas, 54″x30″, 2025"
-            },
-
-            {
-                image: "images/Painting/Painting 1/DinosaurDestroyer.jpg",
-                caption: "Dinosaur Destroyer, 24″x18″, Oil on Canvas, 2024"
-            },
-
-            {
-                image: "images/Painting/Painting 2/LeaveMeLikeYouFoundMe.jpg",
-                caption: "Leave Me Like You Found Me, Oil on Canvas, 48″x48″, 2025"
-            },
-
-            {
-                image: "images/Sculpture/Big baby/BIGBABY.jpg",
-                caption: "BIGBABY, 2.5’x2′, Cardboard, Sand, Coffee ground, Baby powder, Glue, Paint, 2025"
-            },
-
-            {
-                image: "images/Sculpture/Pantyhose/Lily_Price_Project 3_Level up full image.jpg",
-                caption: "You Gotta Have Fear, 3’x3′, Wire and Pantyhose, 2025"
-            },
-
-            {
-                image: "images/Sculpture/yarnman.jpg",
-                caption: "Yarnman, 5’x5′, Yarn, wire, newspaper, 2023"
-            },
-
-            {
-                image: "images/Drawing/Still life 1.jpg",
-                caption: "Still life #1, 24″x18″, Graphite on paper, 2024"
-            }
-        ];
+        let artworks = [];
 
         let currentIndex = 0;
 
@@ -131,7 +94,30 @@
         const caption =
             document.getElementById("carousel-caption");
 
+        async function loadCarouselData() {
+
+            try {
+
+                const response =
+                    await fetch("data/carousel.json");
+
+                artworks =
+                    await response.json();
+
+                updateCarousel();
+
+            } catch (error) {
+
+                console.error(
+                    "Failed to load carousel data:",
+                    error
+                );
+            }
+        }
+
         function updateCarousel() {
+
+            if (artworks.length === 0) return;
 
             const prevIndex =
                 (currentIndex - 1 + artworks.length)
@@ -155,21 +141,29 @@
         }
 
         leftImage.addEventListener("click", () => {
+
             currentIndex--;
+
             if (currentIndex < 0) {
                 currentIndex = artworks.length - 1;
             }
+
             updateCarousel();
         });
 
         rightImage.addEventListener("click", () => {
+
             currentIndex++;
+
             if (currentIndex >= artworks.length) {
                 currentIndex = 0;
             }
+
             updateCarousel();
         });
-        updateCarousel();
+
+        loadCarouselData();
+
     </script>
 
 </body>

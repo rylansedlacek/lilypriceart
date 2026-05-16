@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Seclusion",
+    "desc": "Placeholder Description",
+    "main": "images/Sculpture/Seclusion/Lily_Price_ Project 3_Seclusion (angle).jpg",
+    "subs": [
+      "images/Sculpture/Seclusion/Lily_Price_ Project 3_Seclusion (angle).jpg",
+      "images/Sculpture/Seclusion/Lily_Price_ Project 3_Seclusion (front view).jpg",
+      "images/Sculpture/Seclusion/Lily_Price_ Project 3_Seclusion (side view).jpg",
+      "images/Sculpture/Seclusion/Lily_Price_ Project 3_Seclusion (top view).jpg"
+    ]
+  },
+  {
+    "title": "BIG BABY",
+    "desc": "2.5’x2′, Cardboard, Sand, Coffee ground, Baby powder, Glue, Paint, 2025",
+    "main": "images/Sculpture/Big baby/BIGBABY.jpg",
+    "subs": [
+      "images/Sculpture/Big baby/BIGBABY.jpg",
+      "images/Sculpture/Big baby/BIGBABYcloseupred.jpg",
+      "images/Sculpture/Big baby/BIGBABYcloseupyellow.jpg",
+      "images/Sculpture/Big baby/BIGBABYnorings.jpg"
+    ]
+  },
+  {
+    "title": "You Gotta Have Fear",
+    "desc": "3’x3′, Wire and Pantyhose, 2025",
+    "main": "images/Sculpture/Pantyhose/Lily_Price_Project 3_ Part 1, image 1.jpg",
+    "subs": [
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_ Part 1, image 1.jpg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Part 1, image 2 .jpeg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Part 1, image 3.jpg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Level up full image.jpg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Level up close up.jpg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_level up close up 3.jpg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Level up close up 2.jpg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_ Part 1, image 4.jpg"
+    ]
+  },
+  {
+    "title": "Yarnman",
+    "desc": "Yarn, wire, newspaper, 2023",
+    "main": "images/Sculpture/yarnman.jpg",
+    "subs": []
+  },
+  {
+    "title": "Placeholder Title",
+    "desc": "Placeholder Description",
+    "main": "images/Sculpture/Alteration/Alteration imag 3.jpg",
+    "subs": []
+  },
+  {
+    "title": "Placeholder Title",
+    "desc": "Placeholder Description",
+    "main": "images/Sculpture/through the desert, repenting/Lily_Price_Project 4_through the desert, repenting_front angle.jpg",
+    "subs": [
+      "images/Sculpture/through the desert, repenting/Lily_Price_Project 4_through the desert, repenting_front angle.jpg",
+      "images/Sculpture/through the desert, repenting/Lily_Price_Project 4_through the desert, repenting_left angel.jpg.jpg",
+      "images/Sculpture/through the desert, repenting/Lily_Price_Project 4_through the desert, repenting_right angel.jpg.jpg"
+    ]
+  },
+  {
+    "title": "Placeholder Title",
+    "desc": "Placeholder Description",
+    "main": "images/Sculpture/Untitled, 2023.jpg",
+    "subs": []
+  },
+  {
+    "title": "Placeholder Title",
+    "desc": "Placeholder Description",
+    "main": "images/Sculpture/Pantyhose/Lily_Price_Project 3_Screw image 2.jpeg",
+    "subs": [
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Screw image 2.jpeg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Screw image 3.jpeg",
+      "images/Sculpture/Pantyhose/Lily_Price_Project 3_Screw image 4.jpeg"
+    ]
+  }
+]

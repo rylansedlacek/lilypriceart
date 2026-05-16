@@ -1,0 +1,50 @@
+[
+    {
+        "title": "What goes on",
+        "desc": "Placeholder Description",
+        "main": "images/Drawing/What goes on.jpg",
+        "subs": []
+    },
+
+    {
+        "title": "Claire",
+        "desc": "11″x9″ Colored pencil on paper, 2024",
+        "main": "images/Drawing/Clair.jpg",
+        "subs": []
+    },
+
+    {
+        "title": "Margo",
+        "desc": "Placeholder Description",
+        "main": "images/Drawing/Margo.jpg",
+        "subs": []
+    },
+
+    {
+        "title": "Til I die",
+        "desc": "24″x18″Charcoal on paper, 2024",
+        "main": "images/Drawing/Til_ I Die.jpg",
+        "subs": []
+    },
+
+    {
+        "title": "Stippled girl",
+        "desc": "24″x18″, Ink pen on paper, 2024",
+        "main": "images/Drawing/Stiple Girl.jpg",
+        "subs": []
+    },
+
+    {
+        "title": "Still life #1",
+        "desc": "24″x18″, Graphite on paper, 2024",
+        "main": "images/Drawing/Still life 1.jpg",
+        "subs": []
+    },
+
+    {
+        "title": "Disproportionate",
+        "desc": "20″x20″, Colored pencil on board, 2022",
+        "main": "images/Drawing/Senior.jpg",
+        "subs": []
+    }
+]
