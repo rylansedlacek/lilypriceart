@@ -9,16 +9,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
     <header class="site-header">
-
         <nav class="navbar">
 
             <div class="nav-left">
@@ -36,47 +33,30 @@
                 <a href="drawing.html">Drawing</a>
                 <a href="sculpture.html">Sculpture</a>
             </div>
-
         </nav>
-
     </header>
 
     <main>
 
-        <section class="grid" id="sculpture-grid">
-
-            <!-- dynamic -->
-
-        </section>
+        <section class="grid" id="sculpture-grid"> </section>
 
     </main>
-
     <div id="modal" class="modal">
-
         <div class="modal-content">
-
             <div class="modal-main">
-
                 <img id="modal-main-image">
-
                 <div class="thumbs" id="thumbs"></div>
-
             </div>
 
             <div class="modal-info">
-
                 <h2 id="modal-title">
                     Title Not Found
                 </h2>
-
                 <p id="modal-description">
                     Description not found.
                 </p>
-
             </div>
-
         </div>
-
     </div>
 
     <footer class="site-footer">
@@ -84,7 +64,6 @@
     </footer>
 
     <script>
-
         let artworks = [];
         let currentIndex = 0;
 
@@ -109,7 +88,6 @@
         async function loadSculptureData() {
 
             try {
-
                 const response =
                     await fetch("data/sculpture.json");
 
@@ -119,7 +97,6 @@
                 renderGrid();
 
             } catch (error) {
-
                 console.error(
                     "Failed to load sculpture data:",
                     error
@@ -128,11 +105,8 @@
         }
 
         function renderGrid() {
-
             grid.innerHTML = "";
-
             artworks.forEach((art, index) => {
-
                 const item =
                     document.createElement("div");
 
@@ -151,16 +125,12 @@
         }
 
         function openModal(index) {
-
             currentIndex = index;
-
             modal.style.display = "flex";
-
             loadArtwork();
         }
 
         function loadArtwork() {
-
             const art =
                 artworks[currentIndex];
 
@@ -191,17 +161,12 @@
         }
 
         window.onclick = function (e) {
-
             if (e.target === modal) {
-
                 modal.style.display = "none";
             }
         };
-
         loadSculptureData();
 
     </script>
-
 </body>
-
 </html>

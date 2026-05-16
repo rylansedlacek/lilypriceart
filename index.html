@@ -8,7 +8,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -49,17 +48,14 @@
                 </div>
 
                 <div class="center-image">
-
                     <img
                         id="center-image"
                         src=""
                         alt="Artwork slideshow image"
                     >
-
                     <div class="carousel-description">
                         <p id="carousel-caption"></p>
                     </div>
-
                 </div>
 
                 <div class="side-image right-image">
@@ -79,7 +75,6 @@
     <script>
 
         let artworks = [];
-
         let currentIndex = 0;
 
         const centerImage =
@@ -95,19 +90,13 @@
             document.getElementById("carousel-caption");
 
         async function loadCarouselData() {
-
             try {
-
                 const response =
                     await fetch("data/carousel.json");
-
                 artworks =
                     await response.json();
-
                 updateCarousel();
-
             } catch (error) {
-
                 console.error(
                     "Failed to load carousel data:",
                     error
@@ -116,7 +105,6 @@
         }
 
         function updateCarousel() {
-
             if (artworks.length === 0) return;
 
             const prevIndex =
@@ -141,29 +129,21 @@
         }
 
         leftImage.addEventListener("click", () => {
-
             currentIndex--;
-
             if (currentIndex < 0) {
                 currentIndex = artworks.length - 1;
             }
-
             updateCarousel();
         });
 
         rightImage.addEventListener("click", () => {
-
             currentIndex++;
-
             if (currentIndex >= artworks.length) {
                 currentIndex = 0;
             }
-
             updateCarousel();
         });
-
         loadCarouselData();
-
     </script>
 
 </body>

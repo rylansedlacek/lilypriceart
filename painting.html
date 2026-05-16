@@ -9,7 +9,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -18,9 +17,7 @@
 <body>
 
     <header class="site-header">
-
         <nav class="navbar">
-
             <div class="nav-left">
                 <a href="bio.html">Bio & Statement</a>
             </div>
@@ -36,35 +33,22 @@
                 <a href="drawing.html">Drawing</a>
                 <a href="sculpture.html">Sculpture</a>
             </div>
-
         </nav>
-
     </header>
 
     <main>
-
-        <section class="grid" id="painting-grid">
-
-            <!-- dynamic -->
-
-        </section>
+        <section class="grid" id="painting-grid"></section>
 
     </main>
 
     <div id="modal" class="modal">
-
         <div class="modal-content">
-
             <div class="modal-main">
-
                 <img id="modal-main-image">
-
                 <div class="thumbs" id="thumbs"></div>
-
             </div>
 
             <div class="modal-info">
-
                 <h2 id="modal-title">
                     Title Not Found
                 </h2>
@@ -72,11 +56,8 @@
                 <p id="modal-description">
                     Description not found.
                 </p>
-
             </div>
-
         </div>
-
     </div>
 
     <footer class="site-footer">
@@ -84,9 +65,7 @@
     </footer>
 
     <script>
-
         let artworks = [];
-
         let currentIndex = 0;
 
         const grid =
@@ -110,7 +89,6 @@
         async function loadPaintingData() {
 
             try {
-
                 const response =
                     await fetch("data/painting.json");
 
@@ -129,9 +107,7 @@
         }
 
         function renderGrid() {
-
             grid.innerHTML = "";
-
             artworks.forEach((art, index) => {
 
                 const item =
@@ -146,22 +122,17 @@
                 item.innerHTML = `
                     <img src="${art.main}">
                 `;
-
                 grid.appendChild(item);
             });
         }
 
         function openModal(index) {
-
             currentIndex = index;
-
             modal.style.display = "flex";
-
             loadArtwork();
         }
 
         function loadArtwork() {
-
             const art =
                 artworks[currentIndex];
 
@@ -177,32 +148,23 @@
             thumbs.innerHTML = "";
 
             art.subs.forEach((img) => {
-
                 const thumb =
                     document.createElement("img");
-
                 thumb.src = img;
-
                 thumb.onclick = () => {
                     mainImage.src = img;
                 };
-
                 thumbs.appendChild(thumb);
             });
         }
 
         window.onclick = function (e) {
-
             if (e.target === modal) {
-
                 modal.style.display = "none";
             }
         };
-
         loadPaintingData();
-
     </script>
 
 </body>
-
 </html>

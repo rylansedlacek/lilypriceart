@@ -9,7 +9,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -18,9 +17,7 @@
 <body>
 
     <header class="site-header">
-
         <nav class="navbar">
-
             <div class="nav-left">
                 <a href="bio.html">Bio & Statement</a>
             </div>
@@ -36,21 +33,14 @@
                 <a href="drawing.html">Drawing</a>
                 <a href="sculpture.html">Sculpture</a>
             </div>
-
         </nav>
-
     </header>
 
     <main>
-
-        <section class="grid" id="drawing-grid">
-            <!-- dynamic -->
-        </section>
-
+        <section class="grid" id="drawing-grid">     </section>
     </main>
 
     <div id="modal" class="modal">
-
         <div class="modal-content">
 
             <div class="modal-main">
@@ -62,9 +52,7 @@
                 <h2 id="modal-title">Artwork Title</h2>
                 <p id="modal-description">Artwork description goes here.</p>
             </div>
-
         </div>
-
     </div>
 
     <footer class="site-footer">
@@ -72,7 +60,6 @@
     </footer>
 
     <script>
-
         let artworks = [];
         let currentIndex = 0;
 
@@ -95,9 +82,7 @@
             document.getElementById("thumbs");
 
         async function loadDrawingData() {
-
             try {
-
                 const response =
                     await fetch("data/drawing.json");
 
@@ -105,28 +90,20 @@
                     await response.json();
 
                 renderGrid();
-
             } catch (err) {
-
                 console.error("Failed to load drawings:", err);
             }
         }
 
         function renderGrid() {
-
             grid.innerHTML = "";
-
             artworks.forEach((art, index) => {
-
                 const item =
                     document.createElement("div");
-
                 item.className =
                     "grid-item";
-
                 item.innerHTML =
                     `<img src="${art.main}">`;
-
                 item.onclick =
                     () => openModal(index);
 
@@ -135,14 +112,12 @@
         }
 
         function openModal(index) {
-
             currentIndex = index;
             modal.style.display = "flex";
             loadArtwork();
         }
 
         function loadArtwork() {
-
             const art =
                 artworks[currentIndex];
 
@@ -159,10 +134,8 @@
                 "";
 
             art.subs.forEach(img => {
-
                 const t =
                     document.createElement("img");
-
                 t.src = img;
 
                 t.onclick =
@@ -173,16 +146,12 @@
         }
 
         window.onclick = function (e) {
-
             if (e.target === modal) {
                 modal.style.display = "none";
             }
         };
-
         loadDrawingData();
-
     </script>
 
 </body>
-
 </html>
