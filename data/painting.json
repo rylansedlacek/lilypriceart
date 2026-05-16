@@ -1,25 +1,25 @@
 [
   {
     "title": "Dinosaur Destroyer",
-    "desc": "24â³x18â³, Oil on Canvas, 2024",
+    "desc": "24Ã¢ÂÂ³x18Ã¢ÂÂ³, Oil on Canvas, 2024",
     "main": "images/Painting/Painting 1/DinosaurDestroyer.jpg",
     "subs": []
   },
   {
     "title": "The Farewell of Telemachus and Eucharis after Jacques-Louis David",
-    "desc": "Oil on Canvas, 30â³x24â³, 2025",
+    "desc": "Oil on Canvas, 30Ã¢ÂÂ³x24Ã¢ÂÂ³, 2025",
     "main": "images/Painting/abstract/telemachuswholeimage.jpg",
     "subs": []
   },
   {
     "title": "Save Yourself Part 2",
-    "desc": "Oil on Canvas, 48â³x36â³, 2025",
+    "desc": "Oil on Canvas, 48Ã¢ÂÂ³x36Ã¢ÂÂ³, 2025",
     "main": "images/Painting/abstract/FinalProject_SaveyourselfPt.2.jpg",
     "subs": []
   },
   {
     "title": "Save yourself Part 1",
-    "desc": "Oil on Canvas, 11â³x9â³, 2025",
+    "desc": "Oil on Canvas, 11Ã¢ÂÂ³x9Ã¢ÂÂ³, 2025",
     "main": "images/Painting/abstract/SaveyourselfPt.1.jpg",
     "subs": []
   },
@@ -37,7 +37,7 @@
   },
   {
     "title": "Leave Me Like You Found Me",
-    "desc": "Oil on Canvas, 48â³x48â³, 2025",
+    "desc": "Oil on Canvas, 48Ã¢ÂÂ³x48Ã¢ÂÂ³, 2025",
     "main": "images/Painting/Painting 2/LeaveMeLikeYouFoundMe.jpg",
     "subs": [
       "images/Painting/Painting 2/LeaveMeLikeYouFoundMe.jpg",
@@ -85,6 +85,12 @@
     "title": "Test",
     "desc": "Test",
     "main": "https://raw.githubusercontent.com/rylansedlacek/lilypriceart/main/images/painting/1778955351160_BadgePhoto_SedlacekRylan (1).jpg",
+    "subs": []
+  },
+  {
+    "title": "Test",
+    "desc": "Test",
+    "main": "https://raw.githubusercontent.com/rylansedlacek/lilypriceart/main/images/painting/1778955445225_BadgePhoto_SedlacekRylan (1).jpg",
     "subs": []
   }
 ]
