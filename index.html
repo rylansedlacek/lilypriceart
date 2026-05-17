@@ -92,7 +92,7 @@
         async function loadCarouselData() {
             try {
                 const response =
-                    await fetch("http://3.94.89.95/api/carousel");
+                    await fetch("https://api.lilypriceart.com/api/carousel");
                 artworks =
                     await response.json();
                 updateCarousel();
