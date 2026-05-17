@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Uploads</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            max-width: 700px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Upload Artwork</h1>
+
+<form id="upload-form">
+
+    <select id="category">
+        <option value="painting">Painting</option>
+        <option value="drawing">Drawing</option>
+        <option value="sculpture">Sculpture</option>
+        <option value="carousel">Carousel</option>
+    </select>
+
+    <input
+        type="text"
+        id="title"
+        placeholder="Title"
+    >
+
+    <textarea
+        id="desc"
+        placeholder="Description"
+    ></textarea>
+
+    <input
+        type="text"
+        id="caption"
+        placeholder="Carousel Caption"
+    >
+
+    <label>Main Image</label>
+
+    <input
+        type="file"
+        id="main"
+        required
+    >
+
+    <label>Sub Images</label>
+
+    <input
+        type="file"
+        id="subs"
+        multiple
+    >
+
+    <button type="submit">
+        Upload
+    </button>
+
+</form>
+
+<script>
+
+const form =
+    document.getElementById(
+        "upload-form"
+    );
+
+form.addEventListener(
+    "submit",
+
+    async (e) => {
+
+        e.preventDefault();
+      const formData =
+            new FormData();
+
+        formData.append(
+            "category",
+            document.getElementById(
+                "category"
+            ).value
+        );
+
+        formData.append(
+            "title",
+            document.getElementById(
+                "title"
+            ).value
+        );
+
+        formData.append(
+            "desc",
+            document.getElementById(
+                "desc"
+            ).value
+        );
+
+        formData.append(
+            "caption",
+            document.getElementById(
+                "caption"
+            ).value
+        );
+
+        formData.append(
+            "main",
+            document.getElementById(
+                "main"
+            ).files[0]
+        );
+
+        const subFiles =
+            document.getElementById(
+                "subs"
+            ).files;
+
+        for (const file of subFiles) {
+            formData.append(
+                "subs",
+                file
+            );
+        }
+
+        const response =
+            await fetch(
+                "https://api.lilypriceart.com/api/admin/upload",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (data.success) {
+            alert("Upload successful");
+            form.reset();
+        }
+        else {
+            alert("Upload failed");
+        }
+    }
+);
+
+</script>
+
+</body>
+</html>
