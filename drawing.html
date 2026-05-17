@@ -84,7 +84,7 @@
         async function loadDrawingData() {
             try {
                 const response =
-                    await fetch("data/drawing.json");
+                    await fetch("http://3.94.89.95:3000/api/artwork/drawing");
 
                 artworks =
                     await response.json();
