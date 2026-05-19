@@ -11,11 +11,18 @@
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+        padding: 1.5rem 1rem;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav-left {
         order: 2;
-        justify-content: center;
+        justify-content: center !important;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        flex: none !important;
     }
 
     .nav-center {
@@ -24,8 +31,12 @@
 
     .nav-right {
         order: 3;
-        justify-content: center;
+        justify-content: center !important;
+        align-items: center;
         flex-wrap: wrap;
+        gap: 1rem;
+        text-align: center;
+        flex: none !important;
     }
 
     .nav-left,
@@ -120,6 +131,12 @@ main {
     padding: 3rem;
 }
 
+@media (max-width: 800px) {
+    main {
+        padding: 1rem;
+    }
+}
+
 /* foot */
 .site-footer {
     width: 100%;
@@ -144,12 +161,19 @@ main {
 
 
 /* =========================
-   INDEX 
+   INDEX
 ========================= */
 
 .carousel-section {
     width: 100%;
     padding: 2rem 0;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .carousel-track {
@@ -162,63 +186,99 @@ main {
     overflow: hidden;
 }
 
-/* side images */
-.side-image {
-    width: 250px;
-    height: 350px;
+/* carousel arrows - ONLY 4 MOBILE */
+.carousel-arrow {
+    display: none;
 
+    background: none;
+    border: none;
+
+    font-size: 2rem;
+    cursor: pointer;
+
+    opacity: 0.6;
+
+    transition: opacity 0.2s ease;
+
+    padding: 0.5rem;
+}
+
+.carousel-arrow:hover {
+    opacity: 1;
+}
+
+.side-image,
+.center-image {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.side-image {
+    width: 220px;
+    height: 320px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+}
+
 .side-image img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 
-    width: auto;
-    height: auto;
+    display: block;
 
-    object-fit: contain;
+    object-fit: cover;
 
-    border: 2px solid black;
-
-    cursor: pointer;
+    border: 2px solid #111;
 
     opacity: 0.45;
 
-    transition: all 0.3s ease;
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .side-image img:hover {
     opacity: 0.75;
-    transform: scale(1.02);
+    transform: scale(1.015);
 }
 
-/* center images */
 .center-image {
+    width: 720px;
+    height: auto;
+    max-height: 75vh;
+
+    flex-shrink: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .center-image img {
-    max-width: 700px;
-    max-height: 75vh;
+    max-width: 100%;
+    max-height: 65vh;
 
     width: auto;
     height: auto;
 
+    display: block;
+
     object-fit: contain;
 
-    border: 2px solid black;
+    border: 2px solid #111;
 
-    display: block;
+    background: white;
 }
 
-/* descriptions */
 .carousel-description {
     margin-top: 1rem;
+
     text-align: center;
 
     max-width: 700px;
@@ -228,6 +288,7 @@ main {
     font-family: "Instrument Serif", serif;
 
     font-size: 1rem;
+
     letter-spacing: 0.03em;
 
     color: #222;
@@ -236,11 +297,11 @@ main {
 @media (max-width: 1100px) {
 
     .side-image {
-        width: 180px;
-        height: 250px;
+        width: 160px;
+        height: 230px;
     }
 
-    .center-image img {
+    .center-image {
         width: 500px;
         height: 60vh;
     }
@@ -248,21 +309,44 @@ main {
 }
 
 @media (max-width: 800px) {
+
+    main {
+        padding: 0;
+    }
+
+    .carousel-section {
+        padding: 0;
+        margin-top: -1rem;
+    }
+
     .carousel-track {
         flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .carousel-arrow {
+        display: block;
     }
 
     .side-image {
         display: none;
     }
 
-    .center-image img {
+    .center-image {
         width: 90vw;
-        height: 60vh;
+        height: 75vh;
+        max-height: none;
+    }
+
+    .carousel-description {
+        margin-top: 0.5rem;
+    }
+
+    .carousel-description p {
+        font-size: 0.6rem;
     }
 
 }
-
 /* =========================
    BIO 
 ========================= */
@@ -325,6 +409,8 @@ padding: 3rem;
 
 .grid-item img {
 width: 100%;
+aspect-ratio: 1 / 1;
+object-fit: cover;
 border: 2px solid black;
 cursor: pointer;
 }

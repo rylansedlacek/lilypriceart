@@ -41,6 +41,8 @@
 
         <section class="carousel-section">
 
+            <button class="carousel-arrow carousel-arrow-left" id="arrow-left">‹</button>
+
             <div class="carousel-track">
 
                 <div class="side-image left-image">
@@ -63,6 +65,8 @@
                 </div>
 
             </div>
+
+            <button class="carousel-arrow carousel-arrow-right" id="arrow-right">›</button>
 
         </section>
 
@@ -88,6 +92,12 @@
 
         const caption =
             document.getElementById("carousel-caption");
+
+        const arrowLeft =
+            document.getElementById("arrow-left");
+
+        const arrowRight =
+            document.getElementById("arrow-right");
 
         async function loadCarouselData() {
             try {
@@ -143,6 +153,23 @@
             }
             updateCarousel();
         });
+
+        arrowLeft.addEventListener("click", () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = artworks.length - 1;
+            }
+            updateCarousel();
+        });
+
+        arrowRight.addEventListener("click", () => {
+            currentIndex++;
+            if (currentIndex >= artworks.length) {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+
         loadCarouselData();
     </script>
 
